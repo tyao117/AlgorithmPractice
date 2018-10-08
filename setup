@@ -1,0 +1,14 @@
+#!/bin/bash
+# Usage
+# ./make_and_go (directory) name
+if [ "$#" -ne 1 ]; then
+	printf "Usage: ./setup [dir_name]";
+	exit 1;
+fi
+var1=$1
+echo making $var1
+mkdir $var1
+cd $var1
+touch input.txt
+touch "$var1".cpp
+echo default: "$var1".cpp$'\n'$'\t'g++ -ggdb -std=c++11 -Wpedantic -Wall -Wextra -Wzero-as-null-pointer-constant "$var1".cpp -o "$var1" > makefile
