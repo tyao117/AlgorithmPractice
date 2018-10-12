@@ -11,7 +11,7 @@ bool compare(pair<int, int> a, pair<int,int> b)
 	return a.first + b.first + b.second < b.first + a.first + a.second;
 }
 
-void total_time (int soldiers)
+int total_time (int soldiers)
 {
 	int t_time = 0;
 	int e_time = 0;
@@ -29,25 +29,27 @@ void total_time (int soldiers)
 	e_time = v[0].second;
 	for (int i = 1; i < soldiers; ++i)
 	{
-		cout << v[i].first << " " << v[i].second << endl;
 		timer = v[i].first;
 		e_time = max(e_time, v[i].second);
+		if (e_time == timer)
+			e_time += v[i].second;
 		t_time += timer;
 		e_time -= timer;
 	}
 	t_time += e_time;
-	cout << t_time << endl;
+	return t_time;
 }
 
 int main()
 {
 	int soldiers;
+	int i = 1;
 	while (true)
 	{
 		cin >> soldiers;
 		if (!soldiers)
 		return 0;
 		else
-		total_time(soldiers);
+			cout << "Case " << i++ << ":  " << total_time(soldiers)<< endl;
 	}
 }
