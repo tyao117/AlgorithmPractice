@@ -11,4 +11,4 @@ mkdir $var1
 cd $var1
 touch input.txt
 touch "$var1".cpp
-echo default: "$var1".cpp$'\n'$'\t'g++ -ggdb -std=c++11 -Wpedantic -Wall -Wextra -Wzero-as-null-pointer-constant "$var1".cpp -o "$var1" > makefile
+echo default: "$var1".cpp$'\n'$'\t'g++ -ggdb -std=c++11 -Wzero-as-null-pointer-constant "$var1".cpp -o "$var1" > makefile
