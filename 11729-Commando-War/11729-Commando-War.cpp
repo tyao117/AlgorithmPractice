@@ -8,7 +8,9 @@ using namespace std;
 
 bool compare(pair<int, int> a, pair<int,int> b)
 {
-	return a.first + b.first + b.second < b.first + a.first + a.second;
+	if (a.second == b.second)
+		return (a.first < b.second);
+	return a.second < b.second;
 }
 
 int total_time (int soldiers)
@@ -29,12 +31,7 @@ int total_time (int soldiers)
 	e_time = v[0].second;
 	for (int i = 1; i < soldiers; ++i)
 	{
-		timer = v[i].first;
-		e_time = max(e_time, v[i].second);
-		if (e_time == timer)
-			e_time += v[i].second;
-		t_time += timer;
-		e_time -= timer;
+		
 	}
 	t_time += e_time;
 	return t_time;
