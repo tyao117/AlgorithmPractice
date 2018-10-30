@@ -10,5 +10,5 @@ echo making $var1
 mkdir $var1
 cd $var1
 touch input.txt
-printf "#include <bits/stdc++.h>\n\nusing namespace std;\n\nint main()\n{\nreturn 0;\n}\n" >> "$var1".cpp
+printf "#include <bits/stdc++.h>\n\nusing namespace std;\n\nint main()\n{\n\treturn 0;\n}\n" >> "$var1".cpp
 echo $var1: "$var1".cpp$'\n'$'\t'g++ -ggdb -std=c++11 -Wzero-as-null-pointer-constant "$var1".cpp -o "$var1" > makefile
