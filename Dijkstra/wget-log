@@ -1,0 +1,5 @@
+--2018-11-23 15:48:44--  https://hr-testcases-us-east-1.s3.amazonaws.com/5595/input07.txt?AWSAccessKeyId=AKIAJ4WZFDFQTZRGO3QA
+Loaded CA certificate '/etc/ssl/certs/ca-certificates.crt'
+Resolving hr-testcases-us-east-1.s3.amazonaws.com (hr-testcases-us-east-1.s3.amazonaws.com)... 52.216.107.4
+Connecting to hr-testcases-us-east-1.s3.amazonaws.com (hr-testcases-us-east-1.s3.amazonaws.com)|52.216.107.4|:443... connected.
+HTTP request sent, awaiting response... 
