@@ -2,12 +2,12 @@
 # Usage
 # ./make_and_go (directory) name
 if [ "$#" -ne 1 ]; then
-	printf "Usage: ./setup [dir_name]";
+	printf "Usage: ./setup_python [dir_name]";
 	exit 1;
 fi
 var1=$1
 echo making $var1
-mkdir $var1
+mkdir $var1_python
 cd $var1
 touch input.txt
-printf "import sys\n\nif __name__ == "__main__":\n    " >> "$var1".py
+printf "import sys\n\nif __name__ == \"__main__\":\n    " >> "$var1".py
