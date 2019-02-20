@@ -5,19 +5,19 @@ import heapq
 def findwidestpath(adj_list, s, t, vertices):
     # initialize to negative
     dist = [-float('inf')] * vertices
-    dist[s] = 0
+    dist[s] = float('inf')
     pq = [(0, s)]
     parent = [None] * vertices
     while pq:
         _, u = heapq.heappop(pq)
-        for v, w in adj_list[u]:
+        for v, weight in adj_list[u]:
             # if the current dist is less than previous then we can add more
-            if dist[v] < max(dist[u], w):
+            if dist[v] < min(dist[u], weight):
                 # still get the minimum bottle neck
-                dist[v] = min(dist[u], w) if dist[u] else w
+                dist[v] = min(dist[u], weight) 
                 parent[v] = u
                 # implement a max heap
-                heapq.heappush(pq,(-w, v))
+                heapq.heappush(pq,(-weight, v))
     print(parent)
     print(dist[t])
 
